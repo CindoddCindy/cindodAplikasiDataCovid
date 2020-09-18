@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:gravity="center"
-    android:background="@drawable/bekron"
+    android:background="@drawable/se_propinsi_bekron"
 
     >
 
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:padding="5dp"
-            android:background="#E1A3B8"
+            android:background="@color/cardview_shadow_end_color"
             android:drawableBottom="@drawable/garis"
             >
 
@@ -41,7 +41,7 @@
                 <TextView
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#B9A7DA"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:background="#BBC2EA"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
 
                     >
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#73D8CF"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
 
 
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#67D66B"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis">
 
                 </TextView>
@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#8BC34A"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis">
 
                 </TextView>
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#F872A0"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#EC6E64"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -120,7 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#5BE1F3"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -130,7 +130,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#CDDC39"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#3F51B5"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis">
 
                 </TextView>
@@ -160,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#B9A7DA"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis">
 
                 </TextView>
@@ -170,7 +170,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#BBC2EA"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -181,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#73D8CF"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -192,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#67D66B"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -203,7 +203,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#8BC34A"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -214,7 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#F872A0"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -225,7 +225,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#EC6E64"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -235,7 +235,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#5BE1F3"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -245,7 +245,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#CDDC39"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
@@ -255,7 +255,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
                     android:padding="5dp"
-                    android:background="#3F51B5"
+                    android:background="@color/cardview_shadow_end_color"
                     android:drawableBottom="@drawable/garis"
                     >
 
