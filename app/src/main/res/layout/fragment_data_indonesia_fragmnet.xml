@@ -174,7 +174,7 @@
                android:background="@drawable/barond_data_propinsi"
                android:padding="5dp"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"
+               android:layout_height="match_parent"
                android:orientation="vertical">
 
                <androidx.recyclerview.widget.RecyclerView
@@ -183,7 +183,7 @@
                    android:background="@drawable/background_detail_pesanan"
                    android:layout_marginTop="20dp"
                    android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
+                   android:layout_height="match_parent"
                    android:padding="5dp">
 
                </androidx.recyclerview.widget.RecyclerView>
