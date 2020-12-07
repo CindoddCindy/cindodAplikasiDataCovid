@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/fr_satu"
+        android:title="Data Covid"
+        android:icon="@drawable/ic_baseline_coronavirus_24"
+        />
+
+    <item android:id="@+id/fr_dua"
+        android:title="News"
+        android:icon="@drawable/ic_baseline_new_releases_24"
+        />
+
+
+
+</menu>
