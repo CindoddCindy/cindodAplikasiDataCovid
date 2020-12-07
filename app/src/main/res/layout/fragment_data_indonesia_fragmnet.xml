@@ -171,7 +171,6 @@
            </LinearLayout>
 
            <LinearLayout
-               android:background="@drawable/barond_data_propinsi"
                android:padding="5dp"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
@@ -181,7 +180,7 @@
                    android:layout_marginLeft="5dp"
                    android:layout_marginRight="5dp"
                    android:background="@drawable/background_detail_pesanan"
-                   android:layout_marginTop="20dp"
+                   android:layout_marginTop="5dp"
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
                    android:padding="5dp">
