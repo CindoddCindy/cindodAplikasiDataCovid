@@ -4,14 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
-        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:padding="10dp"
         android:background="@drawable/background_detail_pesanan"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="200dp"
         android:orientation="vertical">
 
         <TextView
+            android:padding="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Propinsi"
@@ -22,16 +24,25 @@
 
         </TextView>
         <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <LinearLayout
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:padding="5dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Positif"
@@ -43,6 +54,8 @@
                 </TextView>
 
                 <TextView
+                    android:padding="5dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="left"
@@ -53,6 +66,8 @@
 
                 </TextView>
                 <TextView
+                    android:padding="5dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Sembuh"
@@ -63,6 +78,8 @@
 
                 </TextView>
                 <TextView
+                    android:padding="5dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Dirawat"
@@ -76,11 +93,18 @@
 
             </LinearLayout>
             <LinearLayout
+                android:layout_gravity="center"
+                android:gravity="center"
+
+                android:padding="5dp"
+
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:padding="5dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"
@@ -91,6 +115,8 @@
 
                 </TextView>
                 <TextView
+                    android:padding="5dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"
@@ -101,6 +127,8 @@
 
                 </TextView>
                 <TextView
+                    android:padding="5dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"
@@ -111,6 +139,8 @@
 
                 </TextView>
                 <TextView
+                    android:padding="5dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"

@@ -45,6 +45,8 @@
 
 
            <LinearLayout
+               android:layout_gravity="center"
+               android:gravity="center"
                android:layout_margin="10dp"
                android:padding="10dp"
                android:background="@drawable/background_detail_pesanan"
@@ -53,6 +55,7 @@
                android:orientation="vertical">
 
                <TextView
+                   android:layout_marginBottom="5dp"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:text="Indonesia"
@@ -63,16 +66,19 @@
 
                </TextView>
                <LinearLayout
+                   android:padding="5dp"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:orientation="horizontal">
 
                <LinearLayout
+                   android:padding="5dp"
                    android:layout_weight="1"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:orientation="vertical">
                    <TextView
+                       android:padding="5dp"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="Positif"
@@ -84,6 +90,8 @@
                    </TextView>
 
                    <TextView
+                       android:padding="5dp"
+
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:gravity="left"
@@ -94,6 +102,8 @@
 
                    </TextView>
                    <TextView
+                       android:padding="5dp"
+
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="Sembuh"
@@ -104,6 +114,8 @@
 
                    </TextView>
                    <TextView
+                       android:padding="5dp"
+
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="Dirawat"
@@ -117,11 +129,13 @@
 
                </LinearLayout>
                <LinearLayout
+                   android:padding="5dp"
                    android:layout_weight="1"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:orientation="vertical">
                    <TextView
+                       android:padding="5dp"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="Indonesia"
@@ -132,6 +146,7 @@
 
                    </TextView>
                    <TextView
+                       android:padding="5dp"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="Indonesia"
@@ -142,6 +157,7 @@
 
                    </TextView>
                    <TextView
+                       android:padding="5dp"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="Indonesia"
@@ -152,6 +168,7 @@
 
                    </TextView>
                    <TextView
+                       android:padding="5dp"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:text="Indonesia"
