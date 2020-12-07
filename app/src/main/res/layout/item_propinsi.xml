@@ -77,18 +77,6 @@
                     android:textStyle="bold">
 
                 </TextView>
-                <TextView
-                    android:padding="5dp"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dirawat"
-                    android:gravity="left"
-                    android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold">
-
-                </TextView>
 
 
             </LinearLayout>
@@ -103,8 +91,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/tv_propinsi_positif"
                     android:padding="5dp"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"
@@ -115,8 +103,8 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/tv_propinsi_meninggal"
                     android:padding="5dp"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"
@@ -127,20 +115,8 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/tv_propinsi_sembuh"
                     android:padding="5dp"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Indonesia"
-                    android:gravity="left"
-                    android:textColor="#000"
-                    android:textSize="15dp"
-                    android:textStyle="bold">
-
-                </TextView>
-                <TextView
-                    android:padding="5dp"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"
