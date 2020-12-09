@@ -29,11 +29,13 @@ public class AdapterIndonesia  extends RecyclerView.Adapter<AdapterIndonesia.Ind
     @Override
     public IndonesiaAdapterChild onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View views= layoutInflater.inflate(R.layout.item_propinsi, parent, false);
-        IndonesiaAdapterChild adapterChild=new IndonesiaAdapterChild(views);
 
-        return adapterChild;
+
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.propinsi_layout, parent, false);
+        IndonesiaAdapterChild mViewHolder = new IndonesiaAdapterChild(mView);
+
+
+        return mViewHolder;
        }
 
     @Override

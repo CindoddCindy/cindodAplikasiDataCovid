@@ -122,7 +122,10 @@ public class DataIndonesiaFragmnet extends Fragment {
         recyclerView.setAdapter(adapterIndonesia);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-        getDataPropinsi();
+
+
+
+        //getDataPropinsi();
 
 
 
