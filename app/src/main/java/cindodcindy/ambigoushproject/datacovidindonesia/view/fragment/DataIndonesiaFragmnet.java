@@ -3,6 +3,8 @@ package cindodcindy.ambigoushproject.datacovidindonesia.view.fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,27 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import cindodcindy.ambigoushproject.datacovidindonesia.R;
-import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiAtributes;
-import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiResponse;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.ModelTest;
 import cindodcindy.ambigoushproject.datacovidindonesia.retrofit.RetrofitMethod;
-import cindodcindy.ambigoushproject.datacovidindonesia.retrofit.RetrofitUrl;
-import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.AdapterPropinsi;
-import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.SliderAdapterExample;
 import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.SliderAdapterIndo;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,10 +42,6 @@ public class DataIndonesiaFragmnet extends Fragment {
     private String mParam2;
 
 
-    private RecyclerView recyclerView;
-    private AdapterPropinsi adapterPropinsi;
-    private List<PropinsiAtributes> propinsiAtributesList = new ArrayList<>();
-    private RetrofitMethod retrofitMethod;
 
     public DataIndonesiaFragmnet() {
         // Required empty public constructor
@@ -106,18 +95,11 @@ public class DataIndonesiaFragmnet extends Fragment {
         sliderView.startAutoCycle();
 
 
-        recyclerView = view.findViewById(R.id.rv_indo_data_prop);
-        adapterPropinsi= new AdapterPropinsi(getContext(),propinsiAtributesList);
-        recyclerView.setAdapter(adapterPropinsi);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
-
-        getContactList();
-
 
         return view;
     }
 
+    /*
 
     public void getContactList(){
 
@@ -169,6 +151,8 @@ public class DataIndonesiaFragmnet extends Fragment {
 
 
     }
+
+ */
 
 
 
