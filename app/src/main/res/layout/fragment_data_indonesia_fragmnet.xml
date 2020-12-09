@@ -238,6 +238,7 @@
                android:orientation="vertical">
 
                <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/rv_indo_data_prop"
                    android:layout_marginLeft="5dp"
                    android:layout_marginRight="5dp"
                    android:background="@drawable/background_detail_pesanan"

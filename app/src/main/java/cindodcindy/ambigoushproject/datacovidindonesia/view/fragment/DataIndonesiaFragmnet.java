@@ -4,18 +4,33 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import cindodcindy.ambigoushproject.datacovidindonesia.R;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiAtributes;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiResponse;
+import cindodcindy.ambigoushproject.datacovidindonesia.retrofit.RetrofitMethod;
+import cindodcindy.ambigoushproject.datacovidindonesia.retrofit.RetrofitUrl;
+import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.AdapterPropinsi;
 import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.SliderAdapterExample;
 import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.SliderAdapterIndo;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +47,12 @@ public class DataIndonesiaFragmnet extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    private RecyclerView recyclerView;
+    private AdapterPropinsi adapterPropinsi;
+    private List<PropinsiAtributes> propinsiAtributesList = new ArrayList<>();
+    private RetrofitMethod retrofitMethod;
 
     public DataIndonesiaFragmnet() {
         // Required empty public constructor
@@ -84,6 +105,71 @@ public class DataIndonesiaFragmnet extends Fragment {
         sliderView.setScrollTimeInSec(4); //set scroll delay in seconds :
         sliderView.startAutoCycle();
 
+
+        recyclerView = view.findViewById(R.id.rv_indo_data_prop);
+        adapterPropinsi= new AdapterPropinsi(getContext(),propinsiAtributesList);
+        recyclerView.setAdapter(adapterPropinsi);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        getContactList();
+
+
         return view;
     }
+
+
+    public void getContactList(){
+
+        retrofitMethod = RetrofitUrl.getRetrofitHandleDataCovid().create(RetrofitMethod.class);
+        Call<PropinsiResponse> orderListCall=retrofitMethod.getDataPropinsi();
+        orderListCall.enqueue(new Callback<PropinsiResponse>() {
+            @Override
+            public void onResponse(Call<PropinsiResponse> call, Response<PropinsiResponse> response) {
+
+                if (response.isSuccessful()) {
+                    //ResponListOrederHistoryBaru responListOrederHistoryBaru=response.body();
+                    //Datum datum = (Datum) responListOrederHistoryBaru.getData();
+                    // ResponListContacts responListContacts=response.body();
+                    //Datum data   = (Datum) responListContacts.getData();
+                    propinsiAtributesList = Collections.singletonList(response.body().getAttributes());
+                    adapterPropinsi = new AdapterPropinsi(getContext(),propinsiAtributesList);
+                    recyclerView.setAdapter(adapterPropinsi);
+                    adapterPropinsi.notifyDataSetChanged();
+
+//
+                }
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(getContext(), "404 not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(getContext(), "500 internal server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(getContext(), "401 unauthorized", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(getContext(), "unknown error", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PropinsiResponse> call, Throwable t) {
+                Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+
+    }
+
+
+
 }
