@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tv_prop_nama_propinsi"
             android:padding="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,6 +92,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+
                     android:id="@+id/tv_propinsi_positif"
                     android:padding="5dp"
                     android:layout_width="match_parent"

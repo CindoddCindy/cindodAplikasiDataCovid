@@ -90,10 +90,11 @@
                android:padding="10dp"
                android:background="@drawable/background_detail_pesanan"
                android:layout_width="match_parent"
-               android:layout_height="180dp"
+               android:layout_height="200dp"
                android:orientation="vertical">
 
                <TextView
+                   android:id="@+id/tv_indo_nama_prop"
                    android:layout_marginBottom="5dp"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
@@ -174,6 +175,7 @@
                    android:layout_height="wrap_content"
                    android:orientation="vertical">
                    <TextView
+                       android:id="@+id/tv_indo_positif"
                        android:padding="5dp"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
@@ -185,6 +187,7 @@
 
                    </TextView>
                    <TextView
+                       android:id="@+id/tv_indo_meninggal"
                        android:padding="5dp"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
@@ -196,6 +199,7 @@
 
                    </TextView>
                    <TextView
+                       android:id="@+id/tv_indo_sembuh"
                        android:padding="5dp"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
@@ -207,6 +211,7 @@
 
                    </TextView>
                    <TextView
+                       android:id="@+id/tv_indo_dirawat"
                        android:padding="5dp"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content"
