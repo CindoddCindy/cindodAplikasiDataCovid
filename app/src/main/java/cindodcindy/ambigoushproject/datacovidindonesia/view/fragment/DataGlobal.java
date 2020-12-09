@@ -1,5 +1,6 @@
 package cindodcindy.ambigoushproject.datacovidindonesia.view.fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,7 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
+
 import cindodcindy.ambigoushproject.datacovidindonesia.R;
+import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.SliderAdapterGlobal;
+import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.SliderAdapterIndo;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +68,23 @@ public class DataGlobal extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_data_global, container, false);
+        View view = inflater.inflate(R.layout.fragment_data_global, container, false);
+
+        SliderView sliderView = view.findViewById(R.id.imageSlider_global_data);
+
+        SliderAdapterGlobal adapter = new SliderAdapterGlobal(getContext());
+
+        sliderView.setSliderAdapter(adapter);
+
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using IndicatorAnimationType. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
+        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
+        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
+        sliderView.setIndicatorSelectedColor(Color.WHITE);
+        sliderView.setIndicatorUnselectedColor(Color.GRAY);
+        sliderView.setScrollTimeInSec(4); //set scroll delay in seconds :
+        sliderView.startAutoCycle();
+
+        return view;
+
     }
 }
