@@ -118,3 +118,5 @@ public class SliderAdapterIndo extends SliderViewAdapter<SliderAdapterIndo.Slide
         }
     }
 }
+
+

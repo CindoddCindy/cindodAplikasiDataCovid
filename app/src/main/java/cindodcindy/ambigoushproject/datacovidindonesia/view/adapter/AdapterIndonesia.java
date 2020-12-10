@@ -12,15 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import cindodcindy.ambigoushproject.datacovidindonesia.R;
+
+
 import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiAtributes;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.modelmodel.Attributes;
 
 public class AdapterIndonesia  extends RecyclerView.Adapter<AdapterIndonesia.IndonesiaAdapterChild> {
 
 
     Context context;
-    List<PropinsiAtributes> propinsiAtributes;
+    List<Attributes> propinsiAtributes;
 
-    public AdapterIndonesia(Context context, List<PropinsiAtributes> propinsiAtributesList){
+    public AdapterIndonesia(Context context, List<Attributes> propinsiAtributesList){
         this.context=context;
         this.propinsiAtributes=propinsiAtributesList;
     }
@@ -41,6 +44,9 @@ public class AdapterIndonesia  extends RecyclerView.Adapter<AdapterIndonesia.Ind
     @Override
     public void onBindViewHolder(@NonNull IndonesiaAdapterChild holder, int position) {
         holder.textView_nama_prop.setText(propinsiAtributes.get(position).getProvinsi());
+        holder.textView_positif.setText(String.valueOf(propinsiAtributes.get(position).getKasusPosi()));
+        holder.textView_meninggal.setText(String.valueOf(propinsiAtributes.get(position).getKasusMeni()));
+        holder.textView_sembuh.setText(String.valueOf(propinsiAtributes.get(position).getKasusSemb()));
 //        holder.textView_isi.setText(modelSementaras.get(position).isi);
 
 

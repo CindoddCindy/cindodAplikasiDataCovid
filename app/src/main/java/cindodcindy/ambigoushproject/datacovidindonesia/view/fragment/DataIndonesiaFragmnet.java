@@ -26,9 +26,12 @@ import cindodcindy.ambigoushproject.datacovidindonesia.R;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.ModelTest;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiAtributes;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiResponse;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.modelmodel.Attributes;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.modelmodel.ResponseDataPropinsi;
 import cindodcindy.ambigoushproject.datacovidindonesia.retrofit.RetrofitMethod;
 import cindodcindy.ambigoushproject.datacovidindonesia.retrofit.RetrofitUrl;
 import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.AdapterIndonesia;
+//import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.SliderAdapterIndo;
 import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.SliderAdapterIndo;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,7 +55,7 @@ public class DataIndonesiaFragmnet extends Fragment {
 
     private RecyclerView recyclerView;
     private AdapterIndonesia adapterIndonesia;
-    private List<PropinsiAtributes> propinsiAtributes = new ArrayList<>();
+    private List<Attributes> propinsiAtributes = new ArrayList<>();
     private RetrofitMethod retrofitMethod;
 
 
@@ -110,6 +113,8 @@ public class DataIndonesiaFragmnet extends Fragment {
 
 
 
+
+
         return view;
     }
 
@@ -124,8 +129,7 @@ public class DataIndonesiaFragmnet extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
 
-
-        //getDataPropinsi();
+        getDataPropinsi();
 
 
 
@@ -135,13 +139,13 @@ public class DataIndonesiaFragmnet extends Fragment {
     public void getDataPropinsi(){
 
         retrofitMethod = RetrofitUrl.getRetrofitHandleDataCovid().create(RetrofitMethod.class);
-        Call<PropinsiResponse> orderListCall=retrofitMethod.getDataPropinsi();
-        orderListCall.enqueue(new Callback<PropinsiResponse>() {
+        Call<ResponseDataPropinsi> orderListCall=retrofitMethod.getDataPropinsi();
+        orderListCall.enqueue(new Callback<ResponseDataPropinsi>() {
             @Override
-            public void onResponse(Call<PropinsiResponse> call, Response<PropinsiResponse> response) {
+            public void onResponse(Call<ResponseDataPropinsi> call, Response<ResponseDataPropinsi> response) {
 
                 if (response.isSuccessful()) {
-                    List<PropinsiAtributes> propinsiAtributes= (List<PropinsiAtributes>) response.body();
+                    response.body().getAttributes();
                     adapterIndonesia = new AdapterIndonesia(getContext(),propinsiAtributes);
                     recyclerView.setAdapter(adapterIndonesia);
                     adapterIndonesia.notifyDataSetChanged();
@@ -167,7 +171,7 @@ public class DataIndonesiaFragmnet extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<PropinsiResponse> call, Throwable t) {
+            public void onFailure(Call<ResponseDataPropinsi> call, Throwable t) {
                 Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
