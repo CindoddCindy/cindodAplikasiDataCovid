@@ -25,7 +25,7 @@ public class RetrofitUrl {
         okHttpClient.addInterceptor(httpLoggingInterceptor).build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.kawalcorona.com/indonesia/")
+                .baseUrl("https://data.covid19.go.id/public/api/")
                 .client(okHttpClient.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
