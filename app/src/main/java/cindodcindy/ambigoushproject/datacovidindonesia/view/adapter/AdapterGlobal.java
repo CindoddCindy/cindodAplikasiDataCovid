@@ -13,14 +13,15 @@ import java.util.List;
 import java.util.PrimitiveIterator;
 
 import cindodcindy.ambigoushproject.datacovidindonesia.R;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.Attributes;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.ModelTest;
 
 public class AdapterGlobal extends RecyclerView.Adapter<AdapterGlobal.GlobalChild> {
 
     Context context;
-    List<ModelTest> modelSementaras;
+    List<Attributes> modelSementaras;
 
-    public AdapterGlobal(Context context, List<ModelTest> modelSementaras){
+    public AdapterGlobal(Context context, List<Attributes> modelSementaras){
         this.context=context;
         this.modelSementaras=modelSementaras;
     }
@@ -40,8 +41,11 @@ public class AdapterGlobal extends RecyclerView.Adapter<AdapterGlobal.GlobalChil
 
     @Override
     public void onBindViewHolder(@NonNull GlobalChild holder, int position) {
-        holder.textView_nama_negara.setText(modelSementaras.get(position).getNamaPropinsi());
-        holder.textView_postif.setText(modelSementaras.get(position).getKasus());
+        holder.textView_nama_negara.setText(modelSementaras.get(position).getCountryRegion());
+        holder.textView_postif.setText(String.valueOf(modelSementaras.get(position).getConfirmed()));
+        holder.textView_meninggal.setText(String.valueOf(modelSementaras.get(position).getDeaths()));
+        holder.textView_sembuh.setText(String.valueOf(modelSementaras.get(position).getRecovered()));
+        holder.textView_dirawat.setText(String.valueOf(modelSementaras.get(position).getActive()));
 
 
     }
@@ -53,13 +57,16 @@ public class AdapterGlobal extends RecyclerView.Adapter<AdapterGlobal.GlobalChil
 
     public  class GlobalChild extends  RecyclerView.ViewHolder{
 
-        private TextView textView_nama_negara, textView_postif;
+        private TextView textView_nama_negara, textView_postif, textView_meninggal, textView_sembuh, textView_dirawat;
 
         public GlobalChild(@NonNull View itemView) {
             super(itemView);
 
             textView_nama_negara=itemView.findViewById(R.id.tv_globa_nama_negara);
             textView_postif=itemView.findViewById(R.id.tv_global_positiv);
+            textView_meninggal=itemView.findViewById(R.id.tv_global_meninggal);
+            textView_sembuh=itemView.findViewById(R.id.tv_global_sembuh);
+            textView_dirawat=itemView.findViewById(R.id.tv_global_dirawat);
         }
     }
 }

@@ -33,4 +33,26 @@ public class RetrofitUrl {
 
     }
 
+    public static Retrofit getRetrofitHandleDataCovidGlobal() {
+
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+
+// set log level
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        OkHttpClient.Builder okHttpClient = new OkHttpClient.Builder();
+
+//add logging
+        okHttpClient.addInterceptor(httpLoggingInterceptor).build();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.kawalcorona.com/")
+                .client(okHttpClient.build())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit;
+
     }
+
+
+}

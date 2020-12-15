@@ -118,8 +118,8 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/tv_global_meninggal"
                     android:padding="5dp"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"
@@ -131,7 +131,7 @@
                 </TextView>
                 <TextView
                     android:padding="5dp"
-
+                    android:id="@+id/tv_global_sembuh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"
@@ -142,8 +142,8 @@
 
                 </TextView>
                 <TextView
+                    android:id="@+id/tv_global_dirawat"
                     android:padding="5dp"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Indonesia"
