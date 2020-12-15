@@ -15,6 +15,7 @@ import cindodcindy.ambigoushproject.datacovidindonesia.R;
 
 
 import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiAtributes;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.data_prop_dua.Datum;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.dataprop.ListDatum;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.dataprop.Penambahan;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.modelmodel.Attributes;
@@ -23,9 +24,9 @@ public class AdapterIndonesia  extends RecyclerView.Adapter<AdapterIndonesia.Ind
 
 
     Context context;
-    List<ListDatum> propinsiAtributes;
+    List<Datum> propinsiAtributes;
 
-    public AdapterIndonesia(Context context, List<ListDatum> propinsiAtributesList){
+    public AdapterIndonesia(Context context, List<Datum> propinsiAtributesList){
         this.context=context;
         this.propinsiAtributes=propinsiAtributesList;
     }
@@ -45,10 +46,10 @@ public class AdapterIndonesia  extends RecyclerView.Adapter<AdapterIndonesia.Ind
 
     @Override
     public void onBindViewHolder(@NonNull IndonesiaAdapterChild holder, int position) {
-        holder.textView_nama_prop.setText(String.valueOf(propinsiAtributes.get(position).getKey()));
-        holder.textView_positif.setText(String.valueOf(propinsiAtributes.get(position).getPenambahan()));
-        holder.textView_meninggal.setText(String.valueOf(propinsiAtributes.get(position).getJumlahMeninggal()));
-        holder.textView_sembuh.setText(String.valueOf(propinsiAtributes.get(position).getJumlahSembuh()));
+        holder.textView_nama_prop.setText(String.valueOf(propinsiAtributes.get(position).getProvinsi()));
+        holder.textView_positif.setText(String.valueOf(propinsiAtributes.get(position).getKasusPosi()));
+        holder.textView_meninggal.setText(String.valueOf(propinsiAtributes.get(position).getKasusMeni()));
+        holder.textView_sembuh.setText(String.valueOf(propinsiAtributes.get(position).getKasusSemb()));
 //        holder.textView_isi.setText(modelSementaras.get(position).isi);
 
 

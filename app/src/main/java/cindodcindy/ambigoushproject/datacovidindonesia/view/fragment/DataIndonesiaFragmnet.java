@@ -26,6 +26,8 @@ import cindodcindy.ambigoushproject.datacovidindonesia.R;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.ModelTest;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiAtributes;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.PropinsiResponse;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.data_prop_dua.DataCovidResponse;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.data_prop_dua.Datum;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.dataprop.ListDatum;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.dataprop.ResponseDataPropinsiDua;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.modelmodel.Attributes;
@@ -57,7 +59,7 @@ public class DataIndonesiaFragmnet extends Fragment {
 
     private RecyclerView recyclerView;
     private AdapterIndonesia adapterIndonesia;
-    private List<ListDatum> propinsiAtributes = new ArrayList<>();
+    private List<Datum> propinsiAtributes = new ArrayList<>();
     private RetrofitMethod retrofitMethod;
 
 
@@ -141,15 +143,18 @@ public class DataIndonesiaFragmnet extends Fragment {
     public void getDataPropinsi(){
 
         retrofitMethod = RetrofitUrl.getRetrofitHandleDataCovid().create(RetrofitMethod.class);
-        Call<ResponseDataPropinsiDua> orderListCall=retrofitMethod.getDataPropinsi();
-        orderListCall.enqueue(new Callback<ResponseDataPropinsiDua>() {
+        Call<DataCovidResponse> orderListCall=retrofitMethod.getDataPropinsi();
+        orderListCall.enqueue(new Callback<DataCovidResponse>() {
             @Override
-            public void onResponse(Call<ResponseDataPropinsiDua> call, Response<ResponseDataPropinsiDua> response) {
+            public void onResponse(Call<DataCovidResponse> call, Response<DataCovidResponse> response) {
 
                 if (response.isSuccessful()) {
-                    response.body().getCurrentData();
-                    adapterIndonesia = new AdapterIndonesia(getContext(),propinsiAtributes);
+                   // response.body().getData();
+                    List<Datum> data = response.body().getData();
+                    adapterIndonesia = new AdapterIndonesia(getContext(),data);
                     recyclerView.setAdapter(adapterIndonesia);
+                    //adapterIndonesia = new AdapterIndonesia(getContext(),propinsiAtributes);
+                    //recyclerView.setAdapter(adapterIndonesia);
                     adapterIndonesia.notifyDataSetChanged();
                 }
                 else {
@@ -173,7 +178,7 @@ public class DataIndonesiaFragmnet extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<ResponseDataPropinsiDua> call, Throwable t) {
+            public void onFailure(Call<DataCovidResponse> call, Throwable t) {
                 Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
