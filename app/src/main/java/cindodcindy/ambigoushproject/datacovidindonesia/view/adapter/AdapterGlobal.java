@@ -15,16 +15,22 @@ import java.util.PrimitiveIterator;
 import cindodcindy.ambigoushproject.datacovidindonesia.R;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.Attributes;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.ModelTest;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.globalempat.GlobalResponseEmpat;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.globaltiga.GlobalResponseTiga;
 
 public class AdapterGlobal extends RecyclerView.Adapter<AdapterGlobal.GlobalChild> {
 
     Context context;
-    List<Attributes> modelSementaras;
+    List<GlobalResponseEmpat> attributes;
 
-    public AdapterGlobal(Context context, List<Attributes> modelSementaras){
+    public AdapterGlobal(Context context, List<GlobalResponseEmpat> attributes){
         this.context=context;
-        this.modelSementaras=modelSementaras;
+        this.attributes=attributes;
     }
+
+    public AdapterGlobal(Context context, String attributes) {
+    }
+
 
 
     @NonNull
@@ -41,18 +47,18 @@ public class AdapterGlobal extends RecyclerView.Adapter<AdapterGlobal.GlobalChil
 
     @Override
     public void onBindViewHolder(@NonNull GlobalChild holder, int position) {
-        holder.textView_nama_negara.setText(modelSementaras.get(position).getCountryRegion());
-        holder.textView_postif.setText(String.valueOf(modelSementaras.get(position).getConfirmed()));
-        holder.textView_meninggal.setText(String.valueOf(modelSementaras.get(position).getDeaths()));
-        holder.textView_sembuh.setText(String.valueOf(modelSementaras.get(position).getRecovered()));
-        holder.textView_dirawat.setText(String.valueOf(modelSementaras.get(position).getActive()));
+        holder.textView_nama_negara.setText(attributes.get(position).getCountry());
+        holder.textView_postif.setText(String.valueOf(attributes.get(position).getTodayCases()));
+        holder.textView_meninggal.setText(String.valueOf(attributes.get(position).getDeaths()));
+        holder.textView_sembuh.setText(String.valueOf(attributes.get(position).getRecovered()));
+        holder.textView_dirawat.setText(String.valueOf(attributes.get(position).getActive()));
 
 
     }
 
     @Override
     public int getItemCount() {
-        return modelSementaras.size();
+        return attributes.size();
     }
 
     public  class GlobalChild extends  RecyclerView.ViewHolder{

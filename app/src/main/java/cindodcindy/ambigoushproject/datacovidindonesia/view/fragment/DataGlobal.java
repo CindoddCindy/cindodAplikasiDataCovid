@@ -28,6 +28,9 @@ import cindodcindy.ambigoushproject.datacovidindonesia.model.GlobalResponse;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.ModelTest;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.data_prop_dua.DataCovidResponse;
 import cindodcindy.ambigoushproject.datacovidindonesia.model.data_prop_dua.Datum;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.globalempat.GlobalResponseEmpat;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.globalpackage.GlobalResponseDua;
+import cindodcindy.ambigoushproject.datacovidindonesia.model.globaltiga.GlobalResponseTiga;
 import cindodcindy.ambigoushproject.datacovidindonesia.retrofit.RetrofitMethod;
 import cindodcindy.ambigoushproject.datacovidindonesia.retrofit.RetrofitUrl;
 import cindodcindy.ambigoushproject.datacovidindonesia.view.adapter.AdapterGlobal;
@@ -53,7 +56,7 @@ public class DataGlobal extends Fragment {
 
     private RecyclerView recyclerView;
     private AdapterGlobal adapterGlobal;
-    private List<Attributes> attributes = new ArrayList<>();
+    private List<GlobalResponseEmpat> attributes = new ArrayList<>();
     private RetrofitMethod retrofitMethod;
 
 
@@ -125,8 +128,8 @@ public class DataGlobal extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView = view.findViewById(R.id.rv_global);
-        adapterGlobal = new AdapterGlobal( getContext(),attributes);
-        recyclerView.setAdapter(adapterGlobal);
+        //adapterGlobal = new AdapterGlobal( getContext(),attributes);
+       // recyclerView.setAdapter(adapterGlobal);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -137,20 +140,28 @@ public class DataGlobal extends Fragment {
     public void getDataGlobal(){
 
         retrofitMethod = RetrofitUrl.getRetrofitHandleDataCovidGlobal().create(RetrofitMethod.class);
-        Call<GlobalResponse> orderListCall=retrofitMethod.getDataGlobal();
-        orderListCall.enqueue(new Callback<GlobalResponse>() {
+        Call<GlobalResponseEmpat> orderListCall=retrofitMethod.getDataGlobal();
+        orderListCall.enqueue(new Callback<GlobalResponseEmpat>() {
             @Override
-            public void onResponse(Call<GlobalResponse> call, Response<GlobalResponse> response) {
+            public void onResponse(Call<GlobalResponseEmpat> call, Response<GlobalResponseEmpat> response) {
 
                 if (response.isSuccessful()) {
                     // response.body().getData();
-                    Attributes attributes = response.body().getAttributes();
+                /*  Attributes   attributes = response.body().getAttributes();
 
-                    adapterGlobal = new AdapterGlobal(getContext(), (List<Attributes>) attributes);
+                    adapterGlobal = new AdapterGlobal(getContext(),attributes);
                     recyclerView.setAdapter(adapterGlobal);
                     //adapterIndonesia = new AdapterIndonesia(getContext(),propinsiAtributes);
                     //recyclerView.setAdapter(adapterIndonesia);
                     adapterGlobal.notifyDataSetChanged();
+
+                 */
+                 //  List  <GlobalResponseEmpat>atributesList = response.body().;
+                   String globalResponseEmpat=response.body().getCountry();
+                    adapterGlobal = new AdapterGlobal(getContext(),  globalResponseEmpat);
+                    recyclerView.setAdapter(adapterGlobal);
+                    Toast.makeText(getContext(), "First page is loaded...", Toast.LENGTH_SHORT).show();
+
                 }
                 else {
                     // error case
@@ -173,7 +184,7 @@ public class DataGlobal extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<GlobalResponse> call, Throwable t) {
+            public void onFailure(Call<GlobalResponseEmpat> call, Throwable t) {
                 Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }

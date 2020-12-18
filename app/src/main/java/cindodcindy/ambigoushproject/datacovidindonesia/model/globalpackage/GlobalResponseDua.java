@@ -1,12 +1,10 @@
 
-package cindodcindy.ambigoushproject.datacovidindonesia.model;
+package cindodcindy.ambigoushproject.datacovidindonesia.model.globalpackage;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class GlobalResponse {
+public class GlobalResponseDua {
 
     @SerializedName("attributes")
     @Expose
@@ -16,20 +14,20 @@ public class GlobalResponse {
      * No args constructor for use in serialization
      * 
      */
-    public GlobalResponse() {
+    public GlobalResponseDua() {
     }
 
     /**
      * 
      * @param attributes
      */
-    public GlobalResponse(Attributes attributes) {
+    public GlobalResponseDua(Attributes attributes) {
         super();
         this.attributes = attributes;
     }
 
-    public List<Attributes> getAttributes() {
-        return (List<Attributes>) attributes;
+    public Attributes getAttributes() {
+        return attributes;
     }
 
     public void setAttributes(Attributes attributes) {
